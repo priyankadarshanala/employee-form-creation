@@ -1,0 +1,13 @@
+ul li{list-style: none;}
+ul li a{text-decoration: none;}
+ul{
+    display: flex;
+    justify-content: flex-start;
+    background-color:lemonchiffon;
+    height: 30px;
+}
+ a{line-height:20px ;
+color:blueviolet;
+margin:0 20px;
+}
+.active{background-color: tan;}

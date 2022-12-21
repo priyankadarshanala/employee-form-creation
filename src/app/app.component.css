@@ -1,0 +1,9 @@
+.error-msg{
+    color: red;
+}
+input.ng-touched.ng-invalid
+{
+    border: 2px solid red;}
+input.ng-touched.ng-valid
+{
+    border-color: 2px solid green;}

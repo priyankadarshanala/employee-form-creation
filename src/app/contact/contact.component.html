@@ -1,0 +1,41 @@
+
+<h4>list of Trainnes</h4>
+<!-- <ul>
+    <li *ngFor="let cantact of contactList">
+      {{cantact.Name}} </li>
+</ul> -->
+<!-- about getmethod -->
+<div class="container" >
+   
+<table border="3" >
+ <thead>
+    <tr>
+        <td>id</td>
+        <td>Name</td>
+        <td>Email</td>
+    </tr>
+ </thead> 
+ <tbody>
+    <tr *ngFor="let cantact of contactList">
+        <td>{{cantact.id}}</td>
+        <td>{{cantact.Name}}</td>
+        <td>{{cantact.email}}</td>
+    </tr>
+ </tbody>
+</table>
+</div>
+<br>
+<!-- about postmethod -->
+<fieldset>
+    <form #usersForm="ngForm" (ngSubmit)=" getUserFormData(usersForm.value)">
+    <input type="text" ngModel name="id" placeholder="enter id">
+    <input type="text" ngModel name="Name" placeholder="enter your name"> 
+     <input type="email" ngModel name="email" placeholder="enter your mail">
+    <button>Add New User</button>
+</form></fieldset>
+<br>
+<!-- about putmethod -->
+<button (click)="updateContact(1);">Update Contact Id</button><br>
+
+<br>
+<button (click)="deleteContact(1);">delete Contact ID:1</button><!-- about deletemethod -->

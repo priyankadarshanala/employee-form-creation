@@ -1,0 +1,25 @@
+h2{
+    text-align: center;
+     color: rgb(0, 38, 255);
+}
+.container{
+    background-attachment: fixed;
+    background-color: lightpink;
+}
+ .pinky{list-style: none;text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    background-color:lemonchiffon;
+    height: 30px;}
+/* ul li a{text-decoration: none;} */
+/* ul{
+    display: flex;
+    justify-content: flex-start;
+    background-color:lemonchiffon;
+    height: 30px;
+} */
+ a{line-height:20px ;
+color:blueviolet;
+margin:0 20px;
+}
+.active{background-color: tan;}

@@ -1,0 +1,113 @@
+ <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3>Create Employee</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group" [ngClass]="{'has-error':  employeeForm.get('fullName')?.errors &&
+      (employeeForm.get('fullName')?.touched || employeeForm.get('fullName')?.dirty)}">
+        <label class="col-sm-2 conrtol-label" for="fullName">Full Name</label>
+        <div class="col-sm-8">
+          <input id="fullName" formControlName="fullName" type="text" class="form-control">
+          <label>{{fullNameLength}}</label>
+          <span class="help-block" *ngIf="employeeForm.get('fullName')?.errors &&
+       (employeeForm.get('fullName')?.touched || employeeForm.get('fullName')?.dirty)">
+            <span *ngIf="employeeForm.get('fullName')?.errors?.required">
+              Full Name is required
+            </span>
+            <span
+              *ngIf="employeeForm.get('fullName')?.errors?.minlength||employeeForm.get('fullName')?.errors?.maxlength">
+              fullName must be greater than 3 characters and lessthan 20 characters
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group" [ngClass]="{'has-error': employeeForm.get('email')?.errors &&
+    (employeeForm.get('email')?.touched || employeeForm.get('email')?.dirty)}">
+        <label class="col-sm-2 conrtol-label" for="email">email</label>
+        <div class="col-sm-8">
+          <input id="email" type="text" formControlName="email" class="form-control">
+          <span class="help-block" *ngIf="employeeForm.get('email')?.errors &&
+      (employeeForm.get('email')?.touched || employeeForm.get('email')?.dirty)">
+            <span *ngIf="employeeForm.get('email')?.errors?.required">
+              email is required
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div formGroupName="skills">
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="skillName">Skill</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="skillName" placeholder="Name" formControlName="skillName">
+          </div>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Experience in Years"
+              formControlName="experienceInYear">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-2 control-label">Proficiency</label>
+          <div class="col-md-8"></div>
+          <label class="radio-inline">
+            <input id="proficiency" type="radio" value="beginner" formControlName="proficiency">Beginner</label>
+          <label class="radio-inline">
+            <input id="proficiency" type="radio" value="intermediate" formControlName="proficiency">Intermediate</label>
+          <label class="radio-inline">
+            <input id="proficiency" type="radio" value="advanced" formControlName="proficiency">Advanced</label>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <div class="btn-toolbar">
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" type="button" (click)="onLoadDataClick()">Load data</button>
+      </div>
+
+    </div>
+  </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form  >
+     
+  <label class="m-2">username:</label> 
+ <input required="" minlength="5" type="text" class="form-control w-50 m-2" ngModel name="uname" #un="ngModel"/>
+ <ng-container *ngIf="un.touched">
+
+ </ng-container>
+<p  class="error-msg" *ngIf="un.errors?.required">username required</p>
+<p  class="error-msg" *ngIf="un.errors?.minlength">username contains minimum 3 characters</p>
+
+<label> Password:</label>
+ <input required="" minlength="5"  type="password"  class="form-control " ngModel name="psw" #p="ngModel"/>
+
+ <ng-container *ngIf="p.touched">
+
+</ng-container>
+<p  class="error-msg" *ngIf="p.errors?.required">password required</p>
+<p  class="error-msg" *ngIf="p.errors?.minlength">password contains minimum 8 characters</p>
+
+ <button (click)="show(un,p)" class="btn btn-primary">click</button>
+</form>  -->
+ <!-- <app-header></app-header> -->
+<!-- <app-home></app-home> -->
+<!-- <app-contact></app-contact> -->
+ <!-- <router-outlet></router-outlet> -->
